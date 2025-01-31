@@ -25,7 +25,7 @@ jobs:
         with:
             registry: ghcr.io
             username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
+            password: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Set Lowercase Actor
         run: echo "actor_lower=$(echo '${{ github.actor }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
