@@ -61,7 +61,7 @@ resource "azurerm_linux_web_app" "webapp" {
     minimum_tls_version = "1.2"
     always_on = false
     application_stack {
-      docker_image_name = "patrickcuadros/shorten:latest"
+      docker_image_name = "3r1ck541n45/erickshorten:latest"
       docker_registry_url = "https://index.docker.io"      
     }
   }
