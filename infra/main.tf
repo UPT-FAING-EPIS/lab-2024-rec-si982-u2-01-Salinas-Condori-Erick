@@ -34,15 +34,15 @@ resource "random_integer" "ri" {
   max = 999
 }
 
-# Create the resource group
+# Create the resource group (apuntando al grupo 520)
 resource "azurerm_resource_group" "rg" {
-  name     = "upt-arg-${random_integer.ri.result}"
+  name     = "upt-arg-520"
   location = "centralus"
 }
 
 # Create the Linux App Service Plan
 resource "azurerm_service_plan" "appserviceplan" {
-  name                = "upt-asp-${random_integer.ri.result}"
+  name                = "upt-asp-520"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   os_type             = "Linux"
@@ -51,7 +51,7 @@ resource "azurerm_service_plan" "appserviceplan" {
 
 # Create the web app, pass in the App Service Plan ID
 resource "azurerm_linux_web_app" "webapp" {
-  name                  = "upt-awa-${random_integer.ri.result}"
+  name                  = "upt-awa-520"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   service_plan_id       = azurerm_service_plan.appserviceplan.id
@@ -61,14 +61,14 @@ resource "azurerm_linux_web_app" "webapp" {
     minimum_tls_version = "1.2"
     always_on = false
     application_stack {
-      docker_image_name = "3r1ck541n45/erickshorten:latest"
+      docker_image_name = "3r1ck541n45/shorten-app:latest"
       docker_registry_url = "https://index.docker.io"      
     }
   }
 }
 
 resource "azurerm_mssql_server" "sqlsrv" {
-  name                         = "upt-dbs-${random_integer.ri.result}"
+  name                         = "upt-dbs-520"
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   version                      = "12.0"
@@ -86,5 +86,5 @@ resource "azurerm_mssql_firewall_rule" "sqlaccessrule" {
 resource "azurerm_mssql_database" "sqldb" {
   name      = "shorten"
   server_id = azurerm_mssql_server.sqlsrv.id
-  sku_name = "Free"
+  sku_name  = "Free"
 }
