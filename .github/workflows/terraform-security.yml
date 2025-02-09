@@ -16,19 +16,23 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      # Instalar TfSec
       - name: Instalar TfSec
         run: |
-          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+          curl -fsSL https://aquasecurity.github.io/tfsec/install.sh | bash
 
+      # Ejecutar TfSec en la carpeta del código Terraform
       - name: Ejecutar TfSec
         run: tfsec . --soft-fail
 
+      # Instalar Trivy (Especificamos una versión estable)
       - name: Instalar Trivy
         run: |
           sudo apt-get install wget -y
-          wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.tar.gz
-          tar -xzf trivy_Linux-64bit.tar.gz
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.48.0/trivy_0.48.0_Linux-64bit.tar.gz
+          tar -xzf trivy_0.48.0_Linux-64bit.tar.gz
           sudo mv trivy /usr/local/bin/
 
+      # Ejecutar Trivy para escanear configuraciones Terraform
       - name: Ejecutar Trivy en Terraform
         run: trivy config .
