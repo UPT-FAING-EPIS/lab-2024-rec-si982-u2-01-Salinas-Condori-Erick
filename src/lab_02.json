@@ -464,7 +464,7 @@
           "alwaysOn": false,
           "functionAppScaleLimit": 0,
           "http20Enabled": false,
-          "linuxFxVersion": "DOCKER|index.docker.io/3r1ck541n45/shorten-app:latest",
+          "linuxFxVersion": "DOCKER|3r1ck541n45/shorten-app:latest",
           "minimumElasticInstanceCount": 0,
           "numberOfWorkers": 1
         },
@@ -542,7 +542,7 @@
           }
         ],
         "ipSecurityRestrictionsDefaultAction": "Allow",
-        "linuxFxVersion": "DOCKER|index.docker.io/3r1ck541n45/shorten-app:latest",
+        "linuxFxVersion": "DOCKER|3r1ck541n45/shorten-app:latest",
         "loadBalancing": "LeastRequests",
         "localMySqlEnabled": false,
         "logsDirectorySizeLimit": 35,
@@ -583,6 +583,42 @@
         "webSocketsEnabled": false
       },
       "type": "Microsoft.Web/sites/config"
+    },
+    {
+      "apiVersion": "2024-04-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_upt_awa_560_name'))]"
+      ],
+      "location": "Central US",
+      "name": "[concat(parameters('sites_upt_awa_560_name'), '/3599d2bd1525ac10cd768b75e9726671c5b4f76e1738886760169')]",
+      "properties": {
+        "active": false,
+        "author": "Salinas-Condori-Erick",
+        "deployer": "GitHub",
+        "end_time": "2025-02-07T00:06:00.2234723Z",
+        "message": "{\"type\":\"Deployment\",\"sha\":\"3599d2bd1525ac10cd768b75e9726671c5b4f76e\",\"repoName\":\"UPT-FAING-EPIS/lab-2024-rec-si982-u2-01-Salinas-Condori-Erick\",\"actor\":\"Salinas-Condori-Erick\",\"slotName\":\"production\"}",
+        "start_time": "2025-02-07T00:06:00.2234723Z",
+        "status": 4
+      },
+      "type": "Microsoft.Web/sites/deployments"
+    },
+    {
+      "apiVersion": "2024-04-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sites_upt_awa_560_name'))]"
+      ],
+      "location": "Central US",
+      "name": "[concat(parameters('sites_upt_awa_560_name'), '/6093cd1230654cd7bd7c51112101bdabcd10d1151738954863908')]",
+      "properties": {
+        "active": true,
+        "author": "Salinas-Condori-Erick",
+        "deployer": "GitHub",
+        "end_time": "2025-02-07T19:01:03.9611255Z",
+        "message": "{\"type\":\"Deployment\",\"sha\":\"6093cd1230654cd7bd7c51112101bdabcd10d115\",\"repoName\":\"UPT-FAING-EPIS/lab-2024-rec-si982-u2-01-Salinas-Condori-Erick\",\"actor\":\"Salinas-Condori-Erick\",\"slotName\":\"production\"}",
+        "start_time": "2025-02-07T19:01:03.9611255Z",
+        "status": 4
+      },
+      "type": "Microsoft.Web/sites/deployments"
     },
     {
       "apiVersion": "2024-04-01",
