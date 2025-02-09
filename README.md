@@ -724,8 +724,34 @@ az group export -n upt-arg-XXX > lab_02.json
 
 2. Realizar el scanero del codigo de terraform utilizando TfSec o Trivy dentro del Github Action.
 
+![image](https://github.com/user-attachments/assets/5aad6ed1-b018-400f-a761-b9bd9009d26b)
 
+![image](https://github.com/user-attachments/assets/45b8f3cd-97e7-40d9-82f7-b600c4a2de91)
+
+![image](https://github.com/user-attachments/assets/171464cd-90cf-4f75-a25d-51cc111ff646)
+
+![image](https://github.com/user-attachments/assets/a4686435-3405-4c8b-be51-9aa1c662072d)
+
+![image](https://github.com/user-attachments/assets/6b3692ac-ddcf-4784-8651-fa906b098214)
+
+![image](https://github.com/user-attachments/assets/ea242988-5e87-43e1-933e-eff99b5f9fad)
+
+![image](https://github.com/user-attachments/assets/553a6aca-7465-411f-96b8-f4849a5fc600)
+
+![image](https://github.com/user-attachments/assets/3fefce5d-8be8-40de-aa3b-586787049441)
+
+![image](https://github.com/user-attachments/assets/6d53275f-f66a-409d-abe1-f8b0bc608a45)
+
+![image](https://github.com/user-attachments/assets/29a2521d-689d-4cbf-9908-2a87d7195cf7)
+
+![image](https://github.com/user-attachments/assets/cabaec23-f613-46c8-a403-aba992d1809e)
+
+![image](https://github.com/user-attachments/assets/a19894d5-e042-4e4b-8a07-3dd1ff3a8f50)
 
 3. En la aplicación completar el envio de correo para el registro de usuarios (https://learn.microsoft.com/es-es/aspnet/core/security/authentication/accconfirm?view=aspnetcore-9.0&tabs=visual-studio)
+
+
+
+
 4. En la aplicación migrar la cadena de conexion a la base de datos a una Configuración de aplicación de Azure, como una variable de ambiente.
 5. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente.
