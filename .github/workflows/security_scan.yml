@@ -27,7 +27,7 @@ jobs:
       - name: Run SonarCloud Scanner
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet sonarscanner begin /k:"salinas-condori-erick_laboratorio2_u2" /o:"salinas-condori-erick" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+          dotnet sonarscanner begin /k:"salinas-condori-erick_lab-2024-rec-si982-u2-01-salinas-condori-erick" /o:"salinas-condori-erick" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.SONAR_TOKEN }}
           dotnet build src/*.csproj  # Detecta automáticamente el archivo .csproj en src/
           dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
 
