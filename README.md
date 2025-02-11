@@ -759,3 +759,15 @@ az group export -n upt-arg-XXX > lab_02.json
 ![image](https://github.com/user-attachments/assets/5f979ae7-e624-4d33-ac8d-a30dd833ae05)
   
 5. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente.
+
+![image](https://github.com/user-attachments/assets/5fbc7edd-f624-4f92-a30a-8b000b86c4d7)
+
+![image](https://github.com/user-attachments/assets/b09f0ebd-a968-4016-80a7-c53fd3aedaf7)
+
+![image](https://github.com/user-attachments/assets/ff6dc8c2-e619-47c4-a6b8-9239340c16b4)
+
+
+![image](https://github.com/user-attachments/assets/1611ac5b-c8d1-4790-aeb0-19b50fd117eb)
+
+![image](https://github.com/user-attachments/assets/7d94a1a0-48c0-42ba-88f8-9101a1ee54cf)
+
