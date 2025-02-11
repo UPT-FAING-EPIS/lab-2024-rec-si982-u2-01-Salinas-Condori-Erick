@@ -29,8 +29,12 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
 
+      - name: Install SonarCloud Scanner
+        run: dotnet tool install --global dotnet-sonarscanner
+
       - name: Run SonarCloud Scanner
         run: |
+          export PATH="$PATH:$HOME/.dotnet/tools"
           dotnet sonarscanner begin /k:"laboratorio2_u2" /o:"salinas-condori-erick" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
           dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
@@ -48,7 +52,7 @@ jobs:
           semgrep --config=auto --json --output=semgrep-results.json || true
 
       - name: Upload Semgrep results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # Actualizado a v4
         with:
           name: semgrep-results
           path: semgrep-results.json
