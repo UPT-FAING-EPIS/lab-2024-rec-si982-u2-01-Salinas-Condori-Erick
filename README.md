@@ -750,8 +750,12 @@ az group export -n upt-arg-XXX > lab_02.json
 
 3. En la aplicación completar el envio de correo para el registro de usuarios (https://learn.microsoft.com/es-es/aspnet/core/security/authentication/accconfirm?view=aspnetcore-9.0&tabs=visual-studio)
 
+![image](https://github.com/user-attachments/assets/3c08fbf9-d628-4184-aa48-31b50c8ea5be)
 
-
+![image](https://github.com/user-attachments/assets/fdf08213-254c-4e55-a95a-695bd03680c1)
 
 4. En la aplicación migrar la cadena de conexion a la base de datos a una Configuración de aplicación de Azure, como una variable de ambiente.
+
+![image](https://github.com/user-attachments/assets/5f979ae7-e624-4d33-ac8d-a30dd833ae05)
+  
 5. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente.
