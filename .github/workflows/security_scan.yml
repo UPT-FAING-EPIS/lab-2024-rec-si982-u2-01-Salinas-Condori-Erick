@@ -40,8 +40,8 @@ jobs:
       - name: Run SonarCloud Scanner
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet sonarscanner begin /k:"laboratorio2_u2" /o:"Salinas-Condori-Erick" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build src/Shorten.csproj  # Se especifica el proyecto
+          dotnet sonarscanner begin /k:"laboratorio2_u2" /o:"salinas-condori-erick" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.projectBaseDir=src
+          dotnet build src/Shorten.csproj  # Cambia esta ruta si es necesario
           dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
 
   semgrep:
