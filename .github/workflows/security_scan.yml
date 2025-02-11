@@ -18,30 +18,17 @@ jobs:
         with:
           fetch-depth: 0  # Obtiene el historial completo del repo
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+      - name: List files in workspace  # Verifica la estructura del repo antes de ejecutar Sonar
+        run: ls -R
 
       - name: Install SonarCloud Scanner
         run: dotnet tool install --global dotnet-sonarscanner
 
-      - name: List files in workspace  # Verifica la estructura del repo
-        run: ls -R
-
       - name: Run SonarCloud Scanner
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet sonarscanner begin /k:"laboratorio2_u2" /o:"salinas-condori-erick" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.projectBaseDir=src
-          dotnet build src/Shorten.csproj  # Cambia esta ruta si es necesario
+          dotnet sonarscanner begin /k:"laboratorio2_u2" /o:"salinas-condori-erick" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+          dotnet build src/*.csproj  # Detecta automáticamente el archivo .csproj en src/
           dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
 
   semgrep:
